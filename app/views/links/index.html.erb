@@ -1,0 +1,18 @@
+<% @links.each do |link| %>
+  <div class="link row clearfix">
+    <h2>
+      <%= link_to link.title, link %><br>
+      <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by <%= link.user %></small>
+    </h2>
+
+    <div class="btn-group">
+      <a class="btn btn-default btn-sm" href="<%= link.url %>">Visit Link</a>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+        Upvote
+
+        <span class="glyphicon glyphicon-chevron-down">
+        Downvote
+      <% end %>
+    </div>
+  </div>
+<% end %>
